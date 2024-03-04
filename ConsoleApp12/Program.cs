@@ -118,24 +118,25 @@ namespace ConsoleApp12
                         Console.WriteLine("Неверный ввод, вы пропускаете ход");
                         break;
                 }
-
-                if (healthBoss <= 0)
-                {
-                    Console.WriteLine("Вы победили");
-                    Console.ReadKey();
-                }
-                else
-                {
                     healthPlayer -= damageBoss;
                     Console.WriteLine($"Вы получили:{damageBoss} урона");
-                    Console.ReadKey();
-                }
-
-                if(healthPlayer <= 0)
-                {
-                    Console.WriteLine("Вы проиграли");
-                    Console.ReadKey();
-                }
+                    Console.ReadKey(); 
+            }
+            
+            if (healthPlayer <= 0 && healthBoss <= 0)
+            {
+                Console.WriteLine("Ничья");
+                Console.ReadKey();
+            }
+            else if (healthBoss <= 0)
+            {
+                Console.WriteLine("Вы победили");
+                Console.ReadKey();
+            }
+            else if (healthPlayer <= 0)
+            {
+                Console.WriteLine("Вы проиграли");
+                Console.ReadKey();
             }
         }
     }
